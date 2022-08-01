@@ -3,6 +3,7 @@ const router = require("express").Router();
 const New = require("../models/New.model.js");
 const User = require("../models/User.model.js");
 const Comment = require("../models/Comment.model.js");
+const categoriesArr = require('../utils/categories.js')//hay q llamarla aquí?
 
 
 // get lista de noticias
@@ -49,7 +50,46 @@ router.post("/create", async (req, res, next) => {
       newImage,
       isVerified
     })
-    res.render("news/add-form.hbs", {userNew})
+    res.redirect("news/add-form.hbs", {userNew})
+  } catch (err) {
+    next(err)
+  }
+})
+
+//get edit
+router.get("/:newId/edit", async (req, res, next) => {
+  try {
+    const { newId } = req.params
+    const editNew = await New.findById(newId)
+    res.render("news/edit-form.hbs", {editNew})
+  } catch (err) {
+  next(err)
+}
+})
+
+//post edit
+router.post("/:newId/edit", async (req, res, next) => {
+  try {
+    const {newId} = req.params
+    const { category, title, text,isVerified } = req.body
+    const editNew = await New.findByIdAndUpdate(newId, {
+      category,
+      title,
+      text,
+      isVerified
+    })
+    res.redirect("news/edit-form.hbs", {editNew})
+  } catch (err) {
+  next(err)
+}
+})
+
+//post delete
+router.post("/:newId/details", async (req, res, next) => {
+  try {
+    const { newId } = req.params
+    const deletedNew = await New.findByIdAndDelete(newId)
+    res.redirect("new/details.hbs", {deletedNew})
   } catch (err) {
     next(err)
   }

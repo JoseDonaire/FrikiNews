@@ -93,7 +93,7 @@ router.get("/login", (req, res, next) => {
         })
         return;
       }
-      req.session.user = {
+      req.session.user = { //en cualquier ruta de mi servidor, yo tengo acceso a req.session.user
         _id: foundUser._id,
         email: foundUser.email,
         username: foundUser.username,

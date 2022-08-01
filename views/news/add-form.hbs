@@ -1,3 +1,5 @@
+
+
 <h2>Add u FrikiNew!</h2>
 
 <form action="/news/create" method="POST">
@@ -7,10 +9,12 @@
   <br>
   <label for="category">Category</label>
   <select name="category" multiple="true">
-    {{#each allCategories}}
-      <option value="{{this._id}}">{{this.title}}</option>
+    {{#each categoriesArr}}
+      <option value="{{this._id}}">{{this.category}}</option>
     {{/each}}
   </select>
+  <br>
+  <label for="{{this._id}}">{{this.username}}</label>
   <br>
   <label for="text">Text</label>
   <input type="text" name="text" required="true">
@@ -18,3 +22,5 @@
   <button>Add New</button>
 
 </form>
+
+verificación !==

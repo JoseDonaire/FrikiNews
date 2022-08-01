@@ -1,7 +1,15 @@
-<h2>detalles prueba</h2>
 
 
 <h3>{{newDetails.title}}</h3>
 <h4>{{newDetails.category}}</h4>
 <h4>{{newDetails.userSignature}}</h4>
 <p>{{newDetails.text}}</p>
+
+
+<form action="/news/{{newDetails._id}}/edit" method="POST">
+  <button>Edit New</button>
+</form>
+
+<form action="/news/{{newDetails._id}}/delete" method="POST">
+  <button>Delete New</button>
+</form>

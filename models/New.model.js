@@ -1,10 +1,11 @@
 const { Schema, model } = require("mongoose");
+const categoriesArr = require('../utils/categories.js')
 
 const newsSchema = new Schema(
   {
     category: {
       type: String,
-      enum: ["movies", "comics",'series','video game', 'other'],
+      enum: categoriesArr,
       required: true
     },
   

@@ -1,0 +1,27 @@
+<h2>Update the FrikiNew</h2>
+
+<div>
+  <form method="POST" action="/news/{{new._id}}/edit-form">
+
+    <div>
+      <label> title: </label>
+      <input name="title" type="text" value="{{editNew.title}}" />
+    </div>
+
+    <div>
+      <label>Category: </label>
+      <input name="category" type="text" value="{{editNew.category}}" />
+    </div>
+
+    <div>
+      <label>text: </label>
+      <input name="text" type="text" value="{{editNew.text}}" />
+    </div>
+
+
+    //! verificación
+
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
