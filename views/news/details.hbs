@@ -1,15 +1,16 @@
 
 
-<h3>{{newDetails.title}}</h3>
-<h4>{{newDetails.category}}</h4>
-<h4>{{newDetails.userSignature}}</h4>
-<p>{{newDetails.text}}</p>
+<h3>{{oneNew.title}}</h3>
+<h4>{{oneNew.category}}</h4>
+<h4>{{oneNew.userSignature}}</h4>
+<p>{{oneNew.text}}</p>
 
 
-<form action="/news/{{newDetails._id}}/edit" method="POST">
+
+<form action="/news/{{oneNew._id}}/edit" method="POST">
   <button>Edit New</button>
 </form>
 
-<form action="/news/{{newDetails._id}}/delete" method="POST">
+<form action="/news/{{oneNew._id}}/delete" method="POST">
   <button>Delete New</button>
 </form>
