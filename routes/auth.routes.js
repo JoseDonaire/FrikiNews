@@ -17,8 +17,8 @@ router.post("/signup", async (req, res, next) => {
     return;
   }
   // fuerza de la contraseña
-  let passwordRegex = ('falta codigo de encriptación')
-  if (passwordRegex.test(password) ===  /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/) {
+  let passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/
+  if (passwordRegex.test(password) ===  false) {
     res.render("auth/signup.hbs", {
       errorMessage: "La contraseña debe tener al menos cuatro(4) letras y un(1) número"
     })

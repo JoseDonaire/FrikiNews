@@ -36,13 +36,14 @@ router.get("/create", async (req, res, next) => {
 //post create comment
 router.post("/create", async (req, res, next) => {
 try {
-  const {userSignature, text, newLink, news, timestamps} = req.body
+  const {userSignature, text, newLink, news} = req.body
+  const userId = req.session.user._id
   const newComment = await Comment.create({
-    userSignature,
+    userId,
     text,
     newLink,
-    news,
-    timestamps
+    news
+    
   })
   res.redirect("comment/add-form.hbs", {newComment})
 } catch (err) {
