@@ -18,5 +18,8 @@ router.use("/profile", profileRoutes)
 const newsRoutes = require("./news.routes.js")
 router.use("/news", newsRoutes)
 
+const commentRoutes = require("./comment.routes.js")
+router.use("/comment", commentRoutes)
+
 
 module.exports = router;
