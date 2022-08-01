@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 a {
@@ -10,3 +11,504 @@ a {
 h1 {
   color: 15px;
 }
+
+
+/*TODO-------------HEADER-------------------- */
+
+header {
+/*   border: 3px solid white;
+  background-color: #c07423; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+/*   position: sticky;
+  top: 0; */
+}
+
+#logo-header {
+  /*   background-color: #00b7ff; 
+  border: 3px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #237cc0;
+  width: 100vw;
+  height: 8em;
+}
+
+#image {
+  /*   background-color: #00b7ff; */
+  width: 17em;
+  height: auto;
+  display: block;
+}
+
+#nav-bar {
+/*   border: 3px solid white; */
+  background-color: #34373a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 2.3em;
+  box-shadow: 1px 0px 2px #16181c;
+}
+
+.nav {
+/*   background-color: yellow;
+  border: 2px solid white; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 15em;
+  height: 2.3em;
+}
+
+.nav-link {
+/*   background-color: red; */
+  color: rgb(224, 232, 242);
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  transition: 0.2s;
+  text-transform: uppercase;
+  color: #00b7ff;
+  transition-delay: 0.2s;
+}
+
+
+.perfil-icon {
+  display: flex;
+  padding-right: 1em;
+}
+
+.icon {
+  /* background-color: #c07423; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.1em;
+  height: 2.1em;
+  
+}
+
+/*TODO-------------HEADER-------------------- */
+
+
+/*TODO----------------INDEX------------------ */
+
+
+
+
+
+
+
+
+.carousel-portada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1em;
+}
+
+.carousel {
+  background-color: #acbec5;
+  margin-bottom: 4rem;
+
+}
+
+.carousel-caption {
+  bottom: 3rem; 
+  z-index: 10;
+  text-shadow: 0 0 10 px #000;
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+  background: #777;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.carousel-item > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  height: 85%;
+}
+
+
+.hot-news {
+
+}
+
+.title-index {
+  color: rgb(224, 232, 242);
+}
+
+
+
+.hot-news {
+/*   border: 4px solid black;
+  background-color: #00b7ff; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1em;
+
+}
+
+.news {
+  border: 2px solid white;
+  background-color: #d65216;
+  display: flex;
+  min-width: 45%;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.news-card {
+  display: flex;
+}
+
+/* .news-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+} */
+
+.news-image {
+  position: relative;
+  overflow: hidden;
+  background: #777;
+  width: 100%;
+  padding-top: 56.25%;
+  
+}
+
+.news-image > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.news-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.teasers {
+  border: 2px solid white;
+  background-color: #d65216;
+  display: flex;
+  min-width: 15%;
+}
+
+.teaser-colum {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.teaser-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.teaser-image {
+  display: flex;
+}
+
+.teaser-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+/*TODO----------------INDEX------------------ */
+
+
+/*TODO----------------SIGNUP----------------- */
+
+.signup-forms {
+  box-sizing: border-box;
+  background-color: black;
+
+}
+
+.forms {
+  
+  max-width: 375px;
+  background: #c9c9c8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+/*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
+  gap: 5.5em;
+}
+
+.form-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.label-us {
+  padding-right: 19.4em;
+
+}
+
+.label-em {
+  padding-right: 21.7em;
+}
+
+.label-ps {
+  padding-right: 19.7em;
+}
+
+.controls {
+
+  width: 85%;
+  background: rgb(255, 255, 255);
+  padding: 10px 10px 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid white;
+  font-size: 14px;
+  color: #222222;
+  opacity: 90%;
+}
+
+::placeholder {
+  color: rgb(104, 103, 103);
+  opacity: 40%;
+}
+
+.forms p {
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.forms a {
+  color: white;
+  text-decoration: none;
+}
+
+.check-policy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  min-width: 6em;
+  padding-left: 1em;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+
+}
+
+.chexbox__input {
+  display: inline-flex;
+  align-items: center;
+  
+}
+
+#policy {
+  display: inline-flex;
+  align-items: center;
+}
+
+span {
+  color: #237cc0;
+  text-decoration: underline;
+}
+
+span:hover {
+  transition: 0.3s;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.err-message {
+  display: flex;
+  justify-content: left;
+}
+
+.btn-registrarse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: 2px rgb(218, 217, 217);
+  border-radius: 9px;
+  width: 11em;
+  height: 2.5em;
+  background-color: #00b7ff;
+  color: white;
+  font-size: 17px;
+  transition: .5s;
+}
+
+.button:hover {
+  background-color: #62c955;
+  transition: 0.4s;
+  color: rgb(44, 43, 43);
+  border: 2px #acbec5;
+}
+
+.link-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registrado {
+  max-width: 14em;
+  max-height: 2.5em;
+  font-size: 13px;
+}
+
+.registrado a:hover {
+  max-width: 14em;
+  max-height: 2.5em;
+  transition: 0.7s;
+  color: #0599d4;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/*TODO----------------SIGNUP----------------- */
+
+
+/*TODO----------------LOGIN------------------ */
+.login-forms {
+  box-sizing: border-box;
+  background-color: black;
+
+}
+
+.forms {
+  
+  max-width: 375px;
+  background: #c9c9c8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+/*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
+  gap: 5.5em;
+}
+
+.form-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.forms p {
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.err-message {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-in {
+  border: 2px rgb(218, 217, 217);
+  border-radius: 9px;
+  width: 11em;
+  height: 2.5em;
+  background-color: #00b7ff;
+  color: white;
+  font-size: 17px;
+  transition: .5s;
+}
+
+.button-in:hover {
+  background-color: #62c955;
+  transition: 0.4s;
+  color: rgb(44, 43, 43);
+  border: 2px #acbec5;
+}
+
+.link-sign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign {
+  max-width: 14em;
+  max-height: 1.5em;
+  font-size: 13px;
+}
+
+.sign-link {
+  max-width: 14em;
+  max-height: 1.5em;
+  font-size: 13px;
+}
+
+.sign-link:hover {
+  max-width: 14em;
+  max-height: 2.5em;
+  transition: 0.7s;
+  color: #0599d4;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/*TODO----------------LOGIN------------------ */
