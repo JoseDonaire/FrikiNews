@@ -29,8 +29,10 @@ router.get("/", async (req, res, next) => {
   // get create new
   router.get("/create", async (req, res, next) => {
     try{
-      const allCategories = await New.find().select("category")
-      res.render("new/details.hbs", { allCategories})
+      const { id } = req.params
+      const oneNew = await New.findById(id).populate('userSignature')
+      //const allCategories = await New.find().select("category")
+      res.render("new/details.hbs", { oneNew})
     }
     catch (err) {
     next(err)

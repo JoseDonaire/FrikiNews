@@ -10,11 +10,11 @@
   <label for="category">Category</label>
   <select name="category" multiple="true">
     {{#each categoriesArr}}
-      <option value="{{this._id}}">{{this.category}}</option>
+      <option value="{{this._id}}">{{oneNew.category}}</option>
     {{/each}}
   </select>
   <br>
-  <label for="{{this._id}}">{{this.username}}</label>
+  <label for="{{this._id}}">{{oneNew.username}}</label>
   <br>
   <label for="text">Text</label>
   <input type="text" name="text" required="true">
