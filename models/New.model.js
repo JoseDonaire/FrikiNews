@@ -27,9 +27,13 @@ const newsSchema = new Schema(
     },
   
     isVerified: {
-        type: booleano,
+        type: Boolean,
         default: false
     },
+
+  },
+
+  {
     timestamps: true
   },
 );

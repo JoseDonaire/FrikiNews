@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const New = require("../models/New.model.js")
-
+const New = require("../models/New.model.js");
+const User = require("../models/User.model.js");
+const Comment = require("../models/Comment.model.js");
 
 // get lista de noticias
 router.get("/", async (req, res, next) => {
@@ -21,4 +22,6 @@ router.get("/", async (req, res, next) => {
       next(err)
     }
   })
+
+  module.exports = router;
 
