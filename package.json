@@ -7,7 +7,10 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.0.1",
+=======
+>>>>>>> 6544781b3054062978f73e97c03dce64d390b631
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
