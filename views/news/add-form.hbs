@@ -8,13 +8,12 @@
   <br>
   <label for="category">Category</label>
   <select name="category">
-   
     {{#each categoriesArr}}
     <option value="{{this}}">{{this}}</option>
     {{/each}}
   </select>
   <br>
-  <label for="{{this._id}}">{{oneNew.username}}</label>
+  <label for="{{this._id}}">{{this.username}}</label>
   <br>
   <label for="text">Text</label>
   <input type="text" name="text" required="true">
@@ -24,6 +23,3 @@
 </form>
 
 verificación !==
-
-
-   <option value="{{this._id}}">{{oneNew.category}}</option>
