@@ -44,15 +44,15 @@ router.get("/", async (req, res, next) => {
 router.post("/create", async (req, res, next) => {
   try {
     const { category, title, text,userSignature,newImage,isVerified } = req.body
-    const userNew = await New.create({
-      category,
+    await New.create({
+      category:categoriesArr,
       title,
       text,
       userSignature,
       newImage,
       isVerified
     })
-    res.redirect("news/add-form.hbs", {userNew})
+    res.redirect("/news/add-form")
   } catch (err) {
     next(err)
   }
@@ -80,7 +80,7 @@ router.post("/:newId/edit", async (req, res, next) => {
       text,
       isVerified
     })
-    res.redirect("news/edit-form.hbs", {editNew})
+    res.redirect("/news/edit-form", {editNew})
   } catch (err) {
   next(err)
 }
@@ -90,8 +90,8 @@ router.post("/:newId/edit", async (req, res, next) => {
 router.post("/:newId/details", async (req, res, next) => {
   try {
     const { newId } = req.params
-    const deletedNew = await New.findByIdAndDelete(newId)
-    res.redirect("new/details.hbs", {deletedNew})
+    await New.findByIdAndDelete(newId)
+    res.redirect("/new/list")
   } catch (err) {
     next(err)
   }

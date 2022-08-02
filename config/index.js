@@ -16,8 +16,8 @@ const favicon = require("serve-favicon");
 // ℹ️ global package used to `normalize` paths amongst different operating systems
 // https://www.npmjs.com/package/path
 const path = require("path");
-const session = require(‘express-session’)
-const MongoStore = require(‘connect-mongo’);
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -37,4 +37,17 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+
+  app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000 
+    },
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/basic-auth",
+      ttl: 48 * 60 * 60
+    })
+  })) 
 };
