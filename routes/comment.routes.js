@@ -45,5 +45,27 @@ router.post("/:commentId/delete", async (req, res, next) => {
   }
 })
 
+router.get("/:newId/details/create/comment", async (req, res, next) => {
+  res.render("comment/add-form.hbs")
+})
+
+
+//post create comment
+router.post("/:newId/details/create/comment", async (req, res, next) => {
+try {
+  const {text, newLink} = req.body
+  const {newId} = req.params
+  await Comment.create({
+    userSignature:req.session.user._id,
+    text,
+    newLink,
+    news
+  })
+  res.redirect(`/news/${newId}/details`, {newComment}) // cambiar a views list
+} catch (err) {
+  next(err)
+}
+})
+
 module.exports = router;
 
