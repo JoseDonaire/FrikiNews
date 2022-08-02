@@ -1,16 +1,16 @@
 
 
 <h2>Add u FrikiNew!</h2>
-
 <form action="/news/create" method="POST">
 
   <label for="title"></label>
   <input type="text" name="title" required="true">
   <br>
   <label for="category">Category</label>
-  <select name="category" multiple="true">
+  <select name="category">
+   
     {{#each categoriesArr}}
-      <option value="{{this._id}}">{{oneNew.category}}</option>
+    <option value="{{this}}">{{this}}</option>
     {{/each}}
   </select>
   <br>
@@ -24,3 +24,6 @@
 </form>
 
 verificación !==
+
+
+   <option value="{{this._id}}">{{oneNew.category}}</option>
