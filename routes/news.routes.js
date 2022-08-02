@@ -83,7 +83,7 @@ router.post("/:newId/edit", async (req, res, next) => {
     },{new:true}
     )
     
-    res.redirect("/news")
+    res.redirect(`/news/${newId}/details`)
   } catch (err) {
   next(err)
 }
