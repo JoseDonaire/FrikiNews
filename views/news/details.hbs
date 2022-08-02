@@ -1,16 +1,18 @@
 
 
-<h3>{{oneNew.title}}</h3>
-<h4>{{oneNew.category}}</h4>
-<h4>{{oneNew.userSignature}}</h4>
-<p>{{oneNew.text}}</p>
+<h3>{{detailId.title}}</h3>
+<h4>{{detailId.category}}</h4>
+<h4>{{detailId.userSignature}}</h4>
+<p>{{detailId.text}}</p>
 
 
 
-<form action="/news/{{oneNew._id}}/edit" method="POST">
+<form action="/news/{{detailId}}/edit" method="POST">
   <button>Edit New</button>
 </form>
 
-<form action="/news/{{oneNew._id}}/delete" method="POST">
+{{!-- <a href="/news/{{detailId._id}}/edit-form.hbs"><button>Edit</button></a> --}}
+
+<form action="/news/{{detailId._id}}/delete" method="POST">
   <button>Delete New</button>
 </form>
