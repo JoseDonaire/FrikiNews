@@ -19,8 +19,8 @@ router.get("/", async (req, res, next) => {
   router.get("/:newId/details", async (req, res, next) => {
     try {
       const {newId} = req.params
-      newId = await New.findById(newId)
-      res.render("new/details.hbs", { newDetails})
+      const detailId = await New.findById(newId)
+      res.render("news/details.hbs", { detailId})
     } catch (err) {
       next(err)
     }
@@ -52,7 +52,7 @@ router.post("/create", async (req, res, next) => {
       isVerified: false,
       userSignature: req.session.user._id
     })
-    res.redirect("/news/details")
+    res.redirect("/news") // TODO tiene que redirirgir a los details de la que hemos creado
   } catch (err) {
     next(err)
   }
@@ -74,24 +74,24 @@ router.post("/:newId/edit", async (req, res, next) => {
   try {
     const {newId} = req.params
     const { category, title, text,isVerified } = req.body
-    const editNew = await New.findByIdAndUpdate(newId, {
+    await New.findByIdAndUpdate(newId, {
       category,
       title,
       text,
       isVerified
     })
-    res.redirect("/news/edit-form", {editNew})
+    res.redirect("/news/edit-form")
   } catch (err) {
   next(err)
 }
 })
 
 //post delete
-router.post("/:newId/details", async (req, res, next) => {
+router.post("/:newId/delete", async (req, res, next) => {
   try {
     const { newId } = req.params
     await New.findByIdAndDelete(newId)
-    res.redirect("/new/list")
+    res.redirect("/news")
   } catch (err) {
     next(err)
   }
