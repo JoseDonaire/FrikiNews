@@ -73,14 +73,17 @@ router.get("/:newId/edit", async (req, res, next) => {
 router.post("/:newId/edit", async (req, res, next) => {
   try {
     const {newId} = req.params
-    const { category, title, text,isVerified } = req.body
+    const { title, text,newImage,category} = req.body
     await New.findByIdAndUpdate(newId, {
       category,
       title,
       text,
-      isVerified
-    })
-    res.redirect("/news/edit-form")
+      newImage,
+      isVerified: false
+    },{new:true}
+    )
+    
+    res.redirect("/news")
   } catch (err) {
   next(err)
 }
