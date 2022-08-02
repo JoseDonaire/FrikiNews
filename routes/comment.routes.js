@@ -3,48 +3,7 @@ const User = require("../models/User.model.js")
 const Comment = require("../models/Comment.model.js")
 const New = require("../models/New.model.js");
 
-
-
-//get edit comment
-router.get("/:commentId/edit", async (req, res, next) => {
-  try {
-    const { commentId } = req.params
-    const editComment = await Comment.findById(commentId)
-    res.render("/comment/edit-form.hbs", {editComment})
-  } catch (err) {
-  next(err)
-}
-})
-
-//post edit comment
-router.post("/:commentId/edit", async (req, res, next) => {
-  try {
-    const {commentId} = req.params
-    const {text,newImage} = req.body
-    await Comment.findByIdAndUpdate(commentId, {
-      text,
-    newLink,
-    },{
-      new:true
-   })
-    res.redirect(`/news/${newId}/details`)
-  } catch (err) {
-  next(err)
-}
-})
-
-
-//delete comment
-router.post("/:commentId/delete", async (req, res, next) => {
-  try {
-    const { commentId } = req.params
-    await Comment.findByIdAndDelete(commentId)
-    res.redirect('/news/${newId}/details')// esto está mal
-  } catch (err) {
-    next(err)
-  }
-})
-
+// get create comment
 router.get("/:newId/details/create/comment", async (req, res, next) => {
   res.render("comment/add-form.hbs")
 })
@@ -66,6 +25,50 @@ try {
   next(err)
 }
 })
+
+
+//get edit comment
+router.get("/:commentId/edit", async (req, res, next) => {
+  try {
+    const { commentId } = req.params
+    const editComment = await Comment.findById(commentId)
+    res.render("/comment/edit-form.hbs", {editComment})
+  } catch (err) {
+  next(err)
+}
+})
+
+//post edit comment
+router.post("/:commentId/edit", async (req, res, next) => {
+  try {
+    const {commentId} = req.params
+    const {text,newLink} = req.body
+    await Comment.findByIdAndUpdate(commentId, {
+      text,
+      newLink,
+    },{
+      new:true
+   })
+    res.redirect(`/news/${newId}/details`)
+  } catch (err) {
+  next(err)
+}
+})
+
+
+//delete comment
+router.post("/:commentId/delete", async (req, res, next) => {
+  try {
+    const { commentId } = req.params
+    const deletedComment = await Comment.findByIdAndDelete(commentId)
+    console.log('debug', deletedComment)
+    res.redirect('/news/${newId}/details')// esto está mal
+  } catch (err) {
+    next(err)
+  }
+})
+
+
 
 module.exports = router;
 
