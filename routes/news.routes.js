@@ -26,33 +26,33 @@ router.get("/", async (req, res, next) => {
     }
   })
 
-  // get create new
-  router.get("/create", async (req, res, next) => {
-    try{
-      const { id } = req.params
-      const oneNew = await New.findById(id).populate('userSignature')
+  // get create new  que nos lleve a la vista de add-form, 
+  router.get("/create", (req, res, next) => {
+    //try{
+      //const { id } = req.params
+      //const oneNew = await New.findById(id).populate('userSignature')
       //const allCategories = await New.find().select("category")
-      res.render("new/details.hbs", { oneNew})
-    }
-    catch (err) {
-    next(err)
-  }
+      res.render("news/add-form.hbs", {categoriesArr}) //{ oneNew})
+    //}
+    //catch (err) {
+    //next(err)
+  //}
   })
 
 
-  //post create new
+  //post create new y asocie la creación con el usuario
 router.post("/create", async (req, res, next) => {
   try {
-    const { category, title, text,userSignature,newImage,isVerified } = req.body
+    const { title, text,newImage,category} = req.body //si el usuario es admin se agrega el is verified
     await New.create({
-      category:categoriesArr,
+      category,
       title,
       text,
-      userSignature,
       newImage,
-      isVerified
+      isVerified: false,
+      userSignature: req.session.user._id
     })
-    res.redirect("/news/add-form")
+    res.redirect("/news/details")
   } catch (err) {
     next(err)
   }
