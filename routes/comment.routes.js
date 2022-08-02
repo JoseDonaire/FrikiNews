@@ -20,7 +20,7 @@ router.get("/:commentId/edit", async (req, res, next) => {
 router.post("/:commentId/edit", async (req, res, next) => {
   try {
     const {commentId} = req.params
-    const { title, text,newImage,category} = req.body
+    const {text,newImage} = req.body
     await Comment.findByIdAndUpdate(commentId, {
       text,
     newLink,
