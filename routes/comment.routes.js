@@ -27,7 +27,7 @@ router.get("/", async (req, res, next) => {
 
 // get create comment
 router.get("/create", async (req, res, next) => {
-  
+  console.log(req.session.user._id)
   res.render("comment/add-form.hbs")
   
 })
@@ -38,6 +38,7 @@ router.post("/create", async (req, res, next) => {
 try {
   const {userSignature, text, newLink, news} = req.body
   const userId = req.session.user._id
+  
   const newComment = await Comment.create({
     userId,
     text,
@@ -45,7 +46,7 @@ try {
     news
     
   })
-  res.redirect("comment/add-form.hbs", {newComment})
+  res.redirect("comment/add-form.hbs", {newComment}) // cambiar a views list
 } catch (err) {
   next(err)
 }
