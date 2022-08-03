@@ -5,14 +5,46 @@
 
   <li>
     
-    <a href="/news/{{this._id}}/details">{{this.title}}</a>
+    
     {{#if isUserAdmin}}
-    <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
+      <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
 
-    <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
-      <button>Delete New</button>
-    </form>
+      <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
+        <button>Delete New</button>
+      </form>
+
+    {{else}}
+
+      <a href="/news/{{this._id}}/details">{{this.title}}</a>
+
     {{/if}}
   </li>
 
 {{/each}}
+
+
+
+
+{{!-- 
+<h1>Todas las Noticias</h1>
+
+{{#each listOfNews}}
+
+  <li>
+    
+    
+    {{#if isUserAdmin as ||}}
+      <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
+
+      <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
+        <button>Delete New</button>
+      </form>
+
+    {{else}}
+
+      <a href="/news/{{this._id}}/details">{{this.title}}</a>
+
+    {{/if}}
+  </li>
+
+{{/each}} --}}

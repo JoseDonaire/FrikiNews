@@ -13,7 +13,7 @@ router.post("/:newId/create", async (req, res, next) => {
     const {newId} = req.params
     console.log("lo ves", newId)
     await Comment.create({
-      userSignature: req.session.user._id,
+      owner: req.session.user._id,
       text,
       newLink,
       news: newId

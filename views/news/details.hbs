@@ -2,10 +2,11 @@
 
 <h3>{{detailId.title}}</h3>
 <h4>{{detailId.category}}</h4>
-<h4>{{detailId.userSignature.username}}</h4>
+<h4>{{detailId.owner.username}}</h4>
 <p>{{detailId.text}}</p>
 
-{{#if isUserAdmin}}
+
+{{#if isOwner}}
 <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
 
 <form action="/news/{{detailId._id}}/delete" method="POST">
@@ -14,6 +15,8 @@
 {{/if}}
 
 <div>
+
+{{#if isUserActive}}
 
   <h2>Comment mdf!</h2>
 
@@ -31,15 +34,17 @@
 
   </form>
 
+{{/if}}
+
 </div>
 
 <div>
 
- {{#each comment}}
+{{#each comment}}
 
     <h3>
 
-      {{this.userSignature.username}}
+      {{this.owner.username}}
 
     </h3>
 
@@ -57,7 +62,7 @@
     </p>
 
 
- {{/each}}
+{{/each}}
 
 
 </div>

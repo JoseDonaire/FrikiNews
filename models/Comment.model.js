@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const commentSchema = new Schema(
     {
-    userSignature: {
+    owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },

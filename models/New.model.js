@@ -18,9 +18,13 @@ const newsSchema = new Schema(
       type: String,
       required: true
     },
-    userSignature: {
+    owner: {
       type: Schema.Types.ObjectId,
       ref: "User"
+    
+    /* userSignature: {
+      type: Schema.Types.ObjectId,
+      ref: "User" */
     },
     newImage: { 
       image: String,  //usar cludinary,  y opcional subir imagen. 
