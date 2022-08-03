@@ -9,6 +9,7 @@ const New = require("../models/New.model.js");
 router.post("/:newId/create", async (req, res, next) => {
   try {
     const {text, newLink} = req.body
+    console.log(req.body)
     const {newId} = req.params
     console.log("lo ves", newId)
     await Comment.create({

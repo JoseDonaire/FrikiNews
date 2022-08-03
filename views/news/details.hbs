@@ -26,11 +26,11 @@
 
 
 
-    <label for="text">Texto</label>
+    <label for="text">Text</label>
     <input name="text" placeholder="comment aquí">
     
-    <label for="newlink">Text</label>
-    <input type="url" name="newlink" placeholder="link">
+    <label for="newLink">Text</label>
+    <input type="url" name="newLink" placeholder="link">
     
     <button>Add New Comment</button>
 
@@ -38,6 +38,34 @@
 
 </div>
 
+<div>
+
+ {{#each comment}}
+
+    <h3>
+
+      {{this.userSignature}}
+      
+    </h3>
+
+
+    <p>
+
+      {{this.text}}
+
+    </p>
+
+    <p>
+
+      {{this.newLink}}
+
+    </p>
+
+
+ {{/each}}
+
+
+</div>
 
 
 
