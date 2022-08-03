@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
       next(err)
     }
   })
-// get details
+// get details // TODO ruta a cambiar para añadir comment
   router.get("/:newId/details", async (req, res, next) => {
     try {
       const {newId} = req.params
