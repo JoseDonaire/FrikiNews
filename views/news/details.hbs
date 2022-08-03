@@ -5,19 +5,13 @@
 <h4>{{detailId.userSignature.username}}</h4>
 <p>{{detailId.text}}</p>
 
-
+{{#if isUserAdmin}}
 <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
-
-{{!-- <form action="/news/{{detailId}}/edit" method="POST">
-  <button>Edit New</button>
-</form> --}}
-
-{{!-- <a href="/news/{{detailId._id}}/edit-form.hbs"><button>Edit</button></a> --}}
 
 <form action="/news/{{detailId._id}}/delete" method="POST">
   <button>Delete New</button>
 </form>
-
+{{/if}}
 
 <div>
 

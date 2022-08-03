@@ -31,6 +31,15 @@ function localsUpdate(req, res, next) { // estas son las variables locales qu eu
   next()
 }
 
+/* function isOwner(req, res, next) {
+  if (req.session.user === detailId) {
+    res.locals.isOwner = true;
+    res.locals.isUserAdmin = false;
+  } else {
+    next() 
+  }
+} */
+
 
   module.exports = {
     isLoggedIn,
