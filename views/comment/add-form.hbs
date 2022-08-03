@@ -1,20 +1,35 @@
+{{!-- -------Crear un comentario RANDOM------------ --}}
+
 <h2>Comment mdf!</h2>
 
-<form action="/news/create" method="POST">
+<form action="/comment/create" method="POST">
 
-  <label for="title"></label>
-  <input type="text" name="title" required="true">
-  <br>
-  <label for="category">Category</label>
-  <select name="category" multiple="true">
+  <label for="text">Texto</label>
+  
+  <input name="text" placeholder="comment aquí">
+  
+  <label for="newlink">Text</label>
+  
+  <input type="url" name="newlink" required="true">
+  
+  <button>Add New Comment</button>
+
+</form>
+
+{{!-- -------Crear un comentario RANDOM------------ --}}
+
+
+{{!-- <form action="/news/create" method="POST">
+
+  <span>username session active</span>  // no es un input, el usuario tiene que aparecer indexado
+  <label for="text">Texto</label>
+  <select name="text" placeholder="escribe aquí">
     {{#each allComments}}
       <option value="{{this._id}}">{{this.title}}</option>
     {{/each}}
   </select>
-  <br>
   <label for="text">Text</label>
   <input type="text" name="text" required="true">
-  <br>
   <button>Add New</button>
 
-</form>
+</form> --}}
