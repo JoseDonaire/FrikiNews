@@ -32,19 +32,22 @@ try {
 
   // ! no funciona
 //post create comment en news/details // TODO version 3.-Comentarios en news/details
-/* router.post("/:newId/details/comment/create", async (req, res, next) => {
+router.post("/:newId/comment/create", async (req, res, next) => {
   try {
     const {text, newLink} = req.body
     const {newId} = req.params
+    console.log("lo ves", newId)
     await Comment.create({
+      userSignature: req.session.user._id,
       text,
       newLink,
+      news: newId
     })
     res.redirect(`/news/${newId}/details`)
   } catch (err) {
     next(err)
   }
-  }) */
+  })
   // ! no funciona
 
 
@@ -52,7 +55,7 @@ try {
 
 
 // get comment create en la DB pero SIN RELACIÓN // TODO v2
-router.get("/create", (req, res, next) => {
+/* router.get("/create", (req, res, next) => {
   res.render("comment/add-form.hbs")
 })
 
@@ -69,7 +72,7 @@ router.get("/create", (req, res, next) => {
     next(err)
   }
   })
-  //* FUNCIONA
+  //* FUNCIONA */
 
  //TODO--------Crear un comentario RANDOM---------------------
 

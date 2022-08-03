@@ -18,16 +18,15 @@
 </form>
 
 
-/* ! no funciona-------------------------------------*/
-{{!-- <div>
+<div>
 
   <h2>Comment mdf!</h2>
 
-  <form action="/{{new.detailId._id}}/comment/create" method="POST">
+  <form action="/comment/{{detailId._id}}/comment/create" method="POST">
 
-    <span>{{req.session.user.username}}</span>
+{{!--     <span>{{req.session.user.username}}</span>
 
-    <h2>{{req.session.user._id}}</h2>
+    <h2>{{req.session.user._id}}</h2> --}}
 
     <label for="text">Texto</label>
     <input name="text" placeholder="comment aquí">
@@ -39,9 +38,8 @@
 
   </form>
 
-</div> --}}
+</div>
 
-/* ! no funciona-------------------------------------*/
 
 
 
