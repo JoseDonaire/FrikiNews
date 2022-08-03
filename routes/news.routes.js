@@ -15,27 +15,31 @@ router.get("/", async (req, res, next) => {
       next(err)
     }
   })
+
+
 // get details // TODO ruta a cambiar para añadir comment
-/*   router.get("/:newId/details", async (req, res, next) => {
+  router.get("/:newId/details", async (req, res, next) => {
     try {
       const {newId} = req.params
-      const detailId = await New.findById(newId) */
+      const detailId = await New.findById(newId)
 
-      /* console.log(detailId)
-      const comment = await
-      Comment.find({newId});
-      const {commentId} = comment; */
-     
-/*       res.render("news/details.hbs", {detailId})
+      console.log(detailId)
+      const comment = await Comment.find({newId});
+      console.log(comment)
+      
+      res.render("news/details.hbs", {detailId, comment})
 
     } catch (err) {
       next(err)
     }
-  }) */
+  })
 
 /* , {commentId: {news: newId._id}} */
       /* res.render("news/details.hbs", {detailId}, {commentId: {news: newId._id}}) */
-/*       console.log("el comment ID", newId) */
+
+      
+
+
 
 
   // get create new  que nos lleve a la vista de add-form, 

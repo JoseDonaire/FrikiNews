@@ -1,4 +1,4 @@
-function isLoggedIn(req, res, next) {
+function isLoggedIn(req, res, next) {   // middlewares que usamos en las rutas
 
     if (req.session.user === undefined) {
       res.redirect("/auth/login")
@@ -7,7 +7,7 @@ function isLoggedIn(req, res, next) {
     }
   }
   function isAdmin(req, res, next) {
-    if (req.session.user.role === "admin") {
+    if (req.session.user.role === "admin") { // middlewares que usamos en las rutas
       next()
     } else {
       res.redirect("/auth/login")
@@ -15,7 +15,7 @@ function isLoggedIn(req, res, next) {
   }
 
   // aqui el middleware que agregará variables para saber si el usuario está activo o no
-function localsUpdate(req, res, next) {
+function localsUpdate(req, res, next) { // estas son las variables locales qu eutilizamos para condicionar las vistas
   if (req.session.user === undefined) {
     // el usuario no está logeado
     res.locals.isUserActive = false;

@@ -4,35 +4,9 @@ const Comment = require("../models/Comment.model.js")
 const New = require("../models/New.model.js");
 
 
-// ? ----------------------Original---------------------------------------
-// get create comment
-/* router.get("/:newId/details/create/comment", async (req, res, next) => {
-  res.render("comment/add-form.hbs")
-}) */
 
-
-//post create comment
-/* router.post("/:newId/details/comment/create", async (req, res, next) => {
-try {
-  const {text, newLink} = req.body
-  const {newId} = req.params
-  await Comment.create({
-    userSignature:req.session.user._id,
-    text,
-    newLink,
-    news
-  })
-  res.redirect(`/news/${newId}/details`, {newComment}) // cambiar a views list
-} catch (err) {
-  next(err)
-}
-}) */
-// ? ----------------------Original---------------------------------------
-
-
-  // ! no funciona
 //post create comment en news/details // TODO version 3.-Comentarios en news/details
-router.post("/:newId/comment/create", async (req, res, next) => {
+router.post("/:newId/create", async (req, res, next) => {
   try {
     const {text, newLink} = req.body
     const {newId} = req.params
@@ -48,35 +22,8 @@ router.post("/:newId/comment/create", async (req, res, next) => {
     next(err)
   }
   })
-  // ! no funciona
-
 
   //TODO--------Crear un comentario RANDOM---------------------
-
-
-// get comment create en la DB pero SIN RELACIÓN // TODO v2
-/* router.get("/create", (req, res, next) => {
-  res.render("comment/add-form.hbs")
-})
-
-// post comment create en la DB pero SIN RELACIÓN // TODO v2
-  router.post("/create", async (req, res, next) => {
-  try {
-    const {text, newLink} = req.body
-    await Comment.create({
-      text,
-      newLink,
-    })
-    res.redirect("/news")
-  } catch (err) {
-    next(err)
-  }
-  })
-  //* FUNCIONA */
-
- //TODO--------Crear un comentario RANDOM---------------------
-
-
 
 
 //get edit comment
