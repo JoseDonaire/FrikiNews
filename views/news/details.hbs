@@ -2,14 +2,15 @@
 
 <h3>{{detailId.title}}</h3>
 <h4>{{detailId.category}}</h4>
-<h4>{{detailId.userSignature}}</h4>
+<h4>{{detailId.userSignature.username}}</h4>
 <p>{{detailId.text}}</p>
 
 
+<a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
 
-<form action="/news/{{detailId}}/edit" method="POST">
+{{!-- <form action="/news/{{detailId}}/edit" method="POST">
   <button>Edit New</button>
-</form>
+</form> --}}
 
 {{!-- <a href="/news/{{detailId._id}}/edit-form.hbs"><button>Edit</button></a> --}}
 
@@ -44,8 +45,8 @@
 
     <h3>
 
-      {{this.userSignature}}
-      
+      {{this.userSignature.username}}
+
     </h3>
 
 
