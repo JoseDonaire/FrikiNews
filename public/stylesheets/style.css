@@ -542,8 +542,8 @@ span:hover {
 .details-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; /* ! quitar para cambiar tamaño */
+/*   justify-content: center;
+  align-items: center; */ /* ! quitar para cambiar tamaño */
   gap: 1.5em;
 }
 
@@ -554,18 +554,22 @@ span:hover {
   gap: 3em;
 
   box-sizing: border-box;
+  width: 60vw;
+  min-width: 32em;
   max-width: 70em;
-  background: #f1f1f1;
+
   padding: 2em;
-  /* margin: auto; */
+  margin: auto;
   border-radius: 4px;
+  background: #f1f1f1;
   color: rgb(54, 53, 53);
 }
 
 .detail-image {
   border: 2px solid black;
   display: flex;
-  max-width: 30em;
+  width: 20vw;
+  min-width: 15em;
   max-height: 20em;
 }
 
@@ -702,14 +706,19 @@ span:hover {
   display: flex;
   flex-direction: column;
   
-  max-width: 675px;
   background: #c9c9c8;
-  padding: 30px;
   margin: auto;
+  box-sizing: border-box;
+  width: 60vw;
+  min-width: 32em;
+  max-width: 70em;
   border-radius: 4px;
   color: rgb(54, 53, 53);
 /*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
   gap: 1.5em;
+
+  /* margin: 0em 20em 0em 20em; */
+  width: 60vw ;
 }
 
 .comment-title {
@@ -725,9 +734,9 @@ span:hover {
   flex-direction: column;
 
 
-  max-width: 675px;
+  /* max-width: 675px; */
   background: #c9c9c8;
-  padding: 30px;
+  padding: 2em;
   margin: auto;
   border-radius: 4px;
   color: rgb(54, 53, 53);
@@ -805,9 +814,11 @@ span:hover {
   display: flex;
   flex-direction: column;
   
-  max-width: 675px;
-  background: #c9c9c8;
-  padding: 30px;
+  box-sizing: border-box;
+  width: 60vw;
+  min-width: 32em;
+  max-width: 70em;
+  padding: 2em;
   margin: auto;
   border-radius: 4px;
   color: rgb(54, 53, 53);
@@ -824,20 +835,25 @@ span:hover {
 }
 
 .all-comments-username {
+  border: 2px solid black;
   display: flex;
+  margin: 3px 0px 3px 0px;
 }
 
 .all-coms-user {
+  border: 4px solid rgb(152, 26, 26);
   font-size: 1.4em;
   font-weight: 900;
 }
 
 .all-comments-text {
+  border: 2px solid black;
   display: flex;
 }
 
 .all-coms-text {
-
+  border: 4px solid rgb(153, 33, 33);
+  font-size: 1.1em;
 }
 
 .all-comments-link {
