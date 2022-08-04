@@ -101,7 +101,7 @@
           
           <div class="comment-text">
             {{!-- <label class="label-com-link" for="newLink">Link</label> --}}
-            <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado">
+            <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado con tu noticia">
           </div>
           
           <div class="comment-button">
@@ -132,11 +132,12 @@
 
       <div class="all-comments-text">
         <p class="all-coms-text">{{this.text}}</p>
-      </div>
-
-      <div class="all-comments-link">
         <p class="all-coms-link"><a href="{{this.newLink}}">{{this.newLink}}</a></p>
       </div>
+
+      {{!-- <div class="all-comments-link">
+        <p class="all-coms-link"><a href="{{this.newLink}}">{{this.newLink}}</a></p>
+      </div> --}}
 
     </div>
 
