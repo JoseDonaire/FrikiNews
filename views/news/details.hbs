@@ -7,72 +7,77 @@
 
 {{!-- -----------------------------------------Details------------------------------------------------- --}}
 
-  <div class="details">
+    <div class="details-card">
 
-    <div class="detail-image">
+      <div class="details">
 
-      <div class="det-image">
-        <img src="#" alt="Imagen Noticia">
+        <div class="detail-image">
+
+          <div class="det-image">
+            <img class="default-image" src="#" alt="Imagen Noticia">
+          </div>
+
+        </div>
+        
+        <div class="detail-info">
+
+          <div class="detail-title">
+            <h3>{{detailId.title}}</h3>
+          </div>
+
+          <div class="detail-category">
+            <p>{{detailId.category}}</p>
+          </div>
+
+          <div class="detail-text">
+            <p>{{detailId.text}}</p>
+          </div>
+
+          <div class="detail-user">
+            <h4>{{detailId.owner.username}}</h4>
+          </div>
+        
+        </div>
+
+      </div>
+
+    
+
+    {{!-- -----------------------------------------Botones------------------------------------------------- --}}
+
+      <div class="detail-buttons">
+
+        {{#if isOwner}}
+
+          <div class="detail-button-edit">
+            <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
+          </div>
+
+          <div class="detail-button-delete">
+            <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
+              <button class="delete-button">Delete</button>
+            </form>
+          </div>
+
+          {{else}}
+            {{#if isUserAdmin}}
+
+            <div class="detail-button-edit">
+              <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
+            </div>
+
+            <div class="detail-button-delete">
+              <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
+                <button class="delete-button">Delete</button>
+              </form>
+            </div>
+
+            {{/if}}
+          {{/if}}
+
       </div>
 
     </div>
-    
-    <div class="detail-info">
-
-      <div class="detail-title">
-        <h3>{{detailId.title}}</h3>
-      </div>
-
-      <div class="detail-category">
-        <h5>{{detailId.category}}</h5>
-      </div>
-
-      <div class="detail-user">
-        <h4>{{detailId.owner.username}}</h4>
-      </div>
-
-      <div class="detail-text">
-        <p>{{detailId.text}}</p>
-      </div>
-    
-    </div>
-
-  </div>
-
-{{!-- -----------------------------------------Botones------------------------------------------------- --}}
-
-  <div class="detail-buttons">
-
-    {{#if isOwner}}
-
-      <div class="owner-button-edit">
-        <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
-      </div>
-
-      <div class="owner-button-delete">
-        <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
-          <button class="delete-button">Delete</button>
-        </form>
-      </div>
-
-      {{else}}
-        {{#if isUserAdmin}}
-
-        <div class="detail-button-edit">
-          <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
-        </div>
-
-        <div class="detail-button-delete">
-          <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
-            <button class="delete-button">Delete</button>
-          </form>
-        </div>
-
-        {{/if}}
-      {{/if}}
-
-  </div>
-
 
 {{!-- -----------------------------------------Comment------------------------------------------------- --}}
 
@@ -86,7 +91,7 @@
 
     <div class="comment-form">
 
-      <form class="-com-form" action="/comment/{{detailId._id}}/create" method="POST">
+      <form class="com-form" action="/comment/{{detailId._id}}/create" method="POST">
 
 
         <div class="comment-text">
@@ -118,16 +123,20 @@
 
   {{#each comment}}
 
-    <div class="all-comments-username">
-      <h3 class="all-coms-user">{{this.owner.username}}</h3>
-    </div>
+    <div class="comments">
 
-    <div class="all-comments-text">
-      <p class="all-coms-text">{{this.text}}</p>
-    </div>
+      <div class="all-comments-username">
+        <h3 class="all-coms-user">{{this.owner.username}}</h3>
+      </div>
 
-    <div class="all-comments-link">
-      <p class="all-coms-link">{{this.newLink}}</p>
+      <div class="all-comments-text">
+        <p class="all-coms-text">{{this.text}}</p>
+      </div>
+
+      <div class="all-comments-link">
+        <p class="all-coms-link">{{this.newLink}}</p>
+      </div>
+
     </div>
 
   {{/each}}

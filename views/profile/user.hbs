@@ -1,10 +1,10 @@
 <h1>Prueba perfil User</h1>
-{{#each listOfNewsById}}
+{{#each listOfNews}}
 
   {{!-- <li> --}}
     
     
-    
+    {{#if isUserAdmin}}
       <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
 
       <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
