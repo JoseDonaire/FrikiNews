@@ -1,52 +1,23 @@
-
-<h1>Todas las Noticias</h1>
-
-{{#each listOfNews}}
-
-  {{!-- <li> --}}
-    
-    
-    {{#if isUserAdmin}}
-      <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
-
-      <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
-        <button>Delete New</button>
-      </form>
-
-    {{else}}
-      <br>
-      <a href="/news/{{this._id}}/details">{{this.title}}</a>
-      {{!-- <a href="/news/{{this._id}}/details">{{this.title}}<button>Comment</button></a> --}}
-      <br>
-
-    {{/if}}
-  {{!-- </li> --}}
-
-{{/each}}
-
-
-
-
-{{!-- 
-<h1>Todas las Noticias</h1>
-
-{{#each listOfNews}}
-
-  <li>
-    
-    
-    {{#if isUserAdmin as ||}}
-      <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
-
-      <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
-        <button>Delete New</button>
-      </form>
-
-    {{else}}
-
-      <a href="/news/{{this._id}}/details">{{this.title}}</a>
-
-    {{/if}}
-  </li>
-
-{{/each}} --}}
+<div>
+  <div>
+    <h1>Noticias</h1>
+  </div>
+  <div>
+    {{#each listOfNews}}
+      {{#if isUserAdmin}}
+        <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
+        <form
+          action="/news/{{this._id}}/delete"
+          method="POST"
+          style="display: inline"
+        >
+          <button>Delete New</button>
+        </form>
+      {{else}}
+        <br>
+        <a href="/news/{{this._id}}/details">{{this.title}}</a>
+        <br>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
