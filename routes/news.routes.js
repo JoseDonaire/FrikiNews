@@ -3,10 +3,10 @@ const router = require("express").Router();
 const New = require("../models/New.model.js");
 const User = require("../models/User.model.js");
 const Comment = require("../models/Comment.model.js");
-const categoriesArr = require('../utils/categories.js')//hay q llamarla aquí?
+const categoriesArr = require('../utils/categories.js')
 
 
-// get lista de noticias
+// get listOfNews
 router.get("/", async (req, res, next) => {
     try {
       const listOfNews = await New.find().select("title")
@@ -17,32 +17,24 @@ router.get("/", async (req, res, next) => {
   })
 
 
-// get details // TODO nueva ruta de Details, Comment Form, y Owner Conditional
+// get details
   router.get("/:newId/details", async (req, res, next) => {
     try {
       const {newId} = req.params
       const detailId = await New.findById(newId).populate('owner')
-      console.log(detailId)
       const comment = await Comment.find({news: newId}).populate('owner');
-      console.log("this is the", comment)
-
-      /* res.render("news/details.hbs", {detailId, comment}) */
-      /* const myOwner = await New.findById(newId).populate("owner"); */
 
       let isOwner = false;
       if (req.session.user !== undefined) {
         if (req.session.user._id == detailId.owner._id) {
-          console.log("le llamaban req", req.session.user._id)
           isOwner = true;
         } else {
           isOwner = false;
         }
       res.render("news/details.hbs", {
-
         detailId,
         isOwner,
         comment
-        /* myOwner */
       });
     } else {
       res.render("news/details.hbs", {
@@ -55,31 +47,9 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-  // TODO nueva ruta de Details, Comment Form, y Owner Conditional
-
-
-  //! RUTA ANTIGUA (nofunciona)
-// get details // TODO ruta GET DETAILS ANTIGUA
-/* router.get("/:newId/details", async (req, res, next) => {
-  try {
-    const {newId} = req.params
-    const detailId = await New.findById(newId).populate('userSignature')
-    console.log(detailId)
-    const comment = await Comment.find({news: newId}).populate('userSignature');
-    console.log("this is the", comment)
-
-    res.render("news/details.hbs", {detailId, comment})
-
-  } catch (err) {
-    next(err)
-  }
-}) */
-  //! RUTA ANTIGUA (nofunciona)
-
 
   // get create new  que nos lleve a la vista de add-form, 
   router.get("/create", (req, res, next) => {
-
     res.render("news/add-form.hbs", {categoriesArr})
 
   })
@@ -97,7 +67,7 @@ router.post("/create", async (req, res, next) => {
       isVerified: false,
       owner: req.session.user._id
     })
-    res.redirect("/news") // TODO tiene que redirirgir a los details de la que hemos creado
+    res.redirect("/news") 
   } catch (err) {
     next(err)
   }
@@ -144,7 +114,6 @@ router.post("/:newId/delete", async (req, res, next) => {
     next(err)
   }
 })
-
 
 
 module.exports = router;

@@ -9,25 +9,25 @@ router.get("/signup", (req, res, next) => {
 // post "/auth/signup" 
 router.post("/signup", async (req, res, next) => {
   const {username, email, password} = req.body
-  //rellenar todos los campos
+  //fill in all the fields
   if (username === "" || email === "" || password === "") {
     res.render("auth/signup.hbs", {
       errorMessage: "Debes llenar todos los campos"
     })
     return;
   }
-  // fuerza de la contraseña
+  // password strong 
   let passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/
   if (passwordRegex.test(password) ===  false) {
     res.render("auth/signup.hbs", {
-      errorMessage: "La contraseña debe tener al menos cuatro(4) letras y un(1) número"
+      errorMessage: "La contraseña debe tener al menos una letra mayúscula, una minúscula, un número y un signo"
     })
     return; 
   }
 
-  // Clausulas guardia
+  // guard clauses
   try {  
-    // mail usado?
+    // mail used?
     const foundUser = await User.findOne({ email })
     if (foundUser !== null) {
       res.render("auth/signup.hbs", {
@@ -35,7 +35,7 @@ router.post("/signup", async (req, res, next) => {
       })
       return; 
     } 
-    // usuario usado?
+    // nameuser used?
     const foundUserByUsername = await User.findOne({ username })
     if (foundUserByUsername !== null) {
       res.render("auth/signup.hbs", {
@@ -43,10 +43,10 @@ router.post("/signup", async (req, res, next) => {
       })
       return;
     } 
-    //cifrar contraseña
+    //encrypt password
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
-    // crear el usuario 
+    // user create 
     await User.create({
       username,
       email,
@@ -66,7 +66,6 @@ router.get("/login", (req, res, next) => {
   // post /auth/login
   router.post("/login", async (req, res, next) => {
   
-    console.log(req.body)
     const { username, password } = req.body
   
     //  datos !== vacios
@@ -93,7 +92,7 @@ router.get("/login", (req, res, next) => {
         })
         return;
       }
-      req.session.user = { //en cualquier ruta de mi servidor, yo tengo acceso a req.session.user
+      req.session.user = { 
         _id: foundUser._id,
         email: foundUser.email,
         username: foundUser.username,
@@ -106,7 +105,7 @@ router.get("/login", (req, res, next) => {
       next(err)
     }
   })
-  // cerrar sesión
+  // logout
   router.get("/logout", (req, res, next) => {
     req.session.destroy(() => {
       res.redirect("/")

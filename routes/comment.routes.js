@@ -1,17 +1,13 @@
 const router = require("express").Router();
-const User = require("../models/User.model.js")
 const Comment = require("../models/Comment.model.js")
-const New = require("../models/New.model.js");
 
 
 
-//post create comment en news/details // TODO version 3.-Comentarios en news/details
+//post create comment in news/details 
 router.post("/:newId/create", async (req, res, next) => {
   try {
     const {text, newLink} = req.body
-    console.log(req.body)
     const {newId} = req.params
-    console.log("lo ves", newId)
     await Comment.create({
       owner: req.session.user._id,
       text,
@@ -23,8 +19,6 @@ router.post("/:newId/create", async (req, res, next) => {
     next(err)
   }
   })
-
-  //TODO--------Crear un comentario RANDOM---------------------
 
 
 //get edit comment
@@ -61,8 +55,7 @@ router.post("/:commentId/delete", async (req, res, next) => {
   try {
     const { commentId } = req.params
     const deletedComment = await Comment.findByIdAndDelete(commentId)
-    console.log('debug', deletedComment)
-    res.redirect('/news/${newId}/details')// esto está mal
+    res.redirect('/news')// esto está mal
   } catch (err) {
     next(err)
   }
