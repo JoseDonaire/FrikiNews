@@ -3,7 +3,7 @@
 
 {{#each listOfNews}}
 
-  <li>
+  {{!-- <li> --}}
     
     
     {{#if isUserAdmin}}
@@ -14,11 +14,13 @@
       </form>
 
     {{else}}
-
+      <br>
       <a href="/news/{{this._id}}/details">{{this.title}}</a>
+      {{!-- <a href="/news/{{this._id}}/details">{{this.title}}<button>Comment</button></a> --}}
+      <br>
 
     {{/if}}
-  </li>
+  {{!-- </li> --}}
 
 {{/each}}
 

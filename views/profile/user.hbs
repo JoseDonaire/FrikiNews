@@ -1,2 +1,74 @@
-<h1>Prueba perfil</h1>
+{{!-- <h1>Prueba perfil</h1>
 
+
+
+<h3>{{new.detailId.title}}</h3>
+<h4>{{new.detailId.category}}</h4>
+<h4>{{new.detailId.owner.username}}</h4>
+<p>{{new.detailId.text}}</p>
+
+
+{{#if isOwner}}
+<a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+
+<form action="/news/{{detailId._id}}/delete" method="POST">
+  <button>Delete New</button>
+</form>
+{{/if}}
+
+<div>
+
+{{#if isUserActive}}
+
+  <h2>Comment mdf!</h2>
+
+  <form action="/comment/{{detailId._id}}/create" method="POST">
+
+
+
+    <label for="text">Text</label>
+    <input name="text" placeholder="comment aquí">
+    
+    <label for="newLink">Text</label>
+    <input type="url" name="newLink" placeholder="link">
+    
+    <button>Add New Comment</button>
+
+  </form>
+
+{{/if}}
+
+</div>
+
+<div>
+
+{{#each comment}}
+
+    <h3>
+
+      {{this.owner.username}}
+
+    </h3>
+
+
+    <p>
+
+      {{this.text}}
+
+    </p>
+
+    <p>
+
+      {{this.newLink}}
+
+    </p>
+
+
+{{/each}}
+
+
+</div>
+
+
+
+ --}}
