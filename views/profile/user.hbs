@@ -1,23 +1,11 @@
-<h1>Prueba perfil User</h1>
+<h2>{{User.username}}</h2>
+
+<h3>Tus Noticias</h3>
+
 {{#each listOfNewsById}}
-
-  {{!-- <li> --}}
-    
-    
-    
-      <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
-
-      <form action="/news/{{this._id}}/delete" method="POST" style="display: inline">
-        <button>Delete New</button>
-      </form>
-
     
       <br>
       <a href="/news/{{this._id}}/details">{{this.title}}</a>
-      {{!-- <a href="/news/{{this._id}}/details">{{this.title}}<button>Comment</button></a> --}}
       <br>
-
-    
-  {{!-- </li> --}}
 
 {{/each}}
