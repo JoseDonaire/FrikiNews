@@ -1,7 +1,5 @@
 const router = require("express").Router();
-const User = require("../models/User.model.js")
 const Comment = require("../models/Comment.model.js")
-const New = require("../models/New.model.js");
 
 
 
