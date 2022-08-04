@@ -1,25 +1,33 @@
+<div>
+  <div>
+    <h2>Add u FrikiNew!</h2>
+  </div>
+  <div>
+    <form action="/news/create" method="POST">
 
+      <div>
+        <label for="title"></label>
+        <input type="text" name="title" required="true" />
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select name="category">
+          {{#each categoriesArr}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div>
+        <label for="{{this._id}}">{{this.username}}</label>
+      </div>
+      <div>
+        <label for="text">Text</label>
+        <input type="text" name="text" required="true" />
+      </div>
+      <div>
+        <button>Add New</button>
+      </div>
+    </form>
 
-<h2>Add u FrikiNew!</h2>
-<form action="/news/create" method="POST">
-
-  <label for="title"></label>
-  <input type="text" name="title" required="true">
-  <br>
-  <label for="category">Category</label>
-  <select name="category">
-    {{#each categoriesArr}}
-    <option value="{{this}}">{{this}}</option>
-    {{/each}}
-  </select>
-  <br>
-  <label for="{{this._id}}">{{this.username}}</label>
-  <br>
-  <label for="text">Text</label>
-  <input type="text" name="text" required="true">
-  <br>
-  <button>Add New</button>
-
-</form>
-
-
+  </div>
+</div>

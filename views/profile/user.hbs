@@ -1,16 +1,16 @@
 <div>
   <div>
-  <h2>Tus Noticias</h2>
-</div>
+    <h2>Tus Noticias</h2>
+  </div>
 
-<div>
-{{#each listOfNewsById}}
-    
-     <div>
-      <a href="/news/{{this._id}}/details">{{this.title}}</a>
-     </div>
+  <div>
+    {{#each listOfNewsById}}
 
-{{/each}}
-</div>
+      <div>
+        <a href="/news/{{this._id}}/details">{{this.title}}</a>
+      </div>
+
+    {{/each}}
+  </div>
 
 </div>
