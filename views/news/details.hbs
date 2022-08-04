@@ -6,13 +6,26 @@
 <p>{{detailId.text}}</p>
 
 
-{{#if isOwner}}
-<a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
 
-<form action="/news/{{detailId._id}}/delete" method="POST">
-  <button>Delete New</button>
-</form>
-{{/if}}
+  {{#if isOwner}}
+  <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+
+  <form action="/news/{{detailId._id}}/delete" method="POST">
+    <button>Delete New</button>
+  </form>
+  {{else}}
+    {{#if isUserAdmin}}
+
+    <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+
+    <form action="/news/{{detailId._id}}/delete" method="POST">
+      <button>Delete New</button>
+    </form>
+    
+    {{/if}}
+  {{/if}}
+
+
 
 <div>
 
