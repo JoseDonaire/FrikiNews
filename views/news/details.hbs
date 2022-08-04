@@ -81,40 +81,40 @@
 
 {{!-- -----------------------------------------Comment------------------------------------------------- --}}
 
-  <div class="comment">
+    <div class="comment">
 
-  {{#if isUserActive}}
+    {{#if isUserActive}}
 
-    <div class="comment-title">
-      <h4>Comentarios</h4>
-    </div>
-
-    <div class="comment-form">
-
-      <form class="com-form" action="/comment/{{detailId._id}}/create" method="POST">
-
-
-        <div class="comment-text">
-          <label class="label-com-txt" for="text">Text</label>
-          <input class="input-com-txt" name="text" placeholder="a ver dices">
-        </div>
-        
-        <div class="comment-link">
-          <label class="label-com-link" for="newLink">Link</label>
-          <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado">
-        </div>
-        
-        <div class="comment-button">
-          <button class="button-new-comment">Add New Comment</button>
-        </div>
-
-      </form>
-
+      <div class="comment-title">
+        <h4>Comentarios</h4>
       </div>
 
-  {{/if}}
+      <div class="comment-form">
 
-  </div>
+        <form class="com-form" action="/comment/{{detailId._id}}/create" method="POST">
+
+
+          <div class="comment-text">
+            <label class="label-com-txt" for="text">Text</label>
+            <input class="input-com-txt" name="text" placeholder="Tu comentario...">
+          </div>
+          
+          <div class="comment-text">
+            <label class="label-com-link" for="newLink">Link</label>
+            <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado">
+          </div>
+          
+          <div class="comment-button">
+            <button class="button-new-comment">Add New Comment</button>
+          </div>
+
+        </form>
+
+        </div>
+
+    {{/if}}
+
+    </div>
 
 
 {{!-- -----------------------------------------All Comments------------------------------------------------- --}}
@@ -124,6 +124,7 @@
   {{#each comment}}
 
     <div class="comments">
+      
 
       <div class="all-comments-username">
         <h3 class="all-coms-user">{{this.owner.username}}</h3>

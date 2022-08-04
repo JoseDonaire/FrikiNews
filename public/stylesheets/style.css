@@ -259,10 +259,10 @@ header {
 }
 
 
-/*TODO----------------INDEX------------------ */
+/*TODO---------------------------------------INDEX---------------------------------------- */
 
 
-/*TODO----------------SIGNUP----------------- */
+/*TODO----------------------------------------SIGNUP-------------------------------------- */
 
 .signup-forms {
   box-sizing: border-box;
@@ -419,10 +419,10 @@ span:hover {
   font-size: 16px;
 }
 
-/*TODO----------------SIGNUP----------------- */
+/*TODO---------------------------------SIGNUP---------------------------------------- */
 
 
-/*TODO----------------LOGIN------------------ */
+/*TODO----------------------------------LOGIN---------------------------------------- */
 .login-forms {
   box-sizing: border-box;
   background-color: black;
@@ -512,10 +512,10 @@ span:hover {
   font-size: 16px;
 }
 
-/*TODO----------------LOGIN------------------ */
+/*TODO----------------------------------------LOGIN------------------------------- */
 
 
-/*TODO----------------DETAILS------------------ */
+/*TODO--------------------------------------DETAILS-------------------------------- */
 
 .details-page {
   display: flex;
@@ -632,7 +632,7 @@ span:hover {
   border: 4px solid rgb(216, 67, 17);
 }
 
-/*?-------------------------Buttons----------------------------*/
+/*?-------------------------------------Buttons------------------------------------*/
 
 .detail-buttons {
   display: flex;
@@ -696,16 +696,20 @@ span:hover {
 }
 
 
-/*?------------------------All Comments-----------------------*/
+/*?------------------------------------Comments--------------------------------*/
 
 .comment {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  gap: 2em;
-
-  width: 70em;
+  
+  max-width: 675px;
+  background: #c9c9c8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+/*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
+  gap: 1.5em;
 }
 
 .comment-title {
@@ -739,9 +743,9 @@ span:hover {
   gap: 0.5em;
 }
 
-.label-com-txt {
+/* .label-com-txt {
   
-}
+} */
 
 .input-com-txt {
   width: 85%;
@@ -755,17 +759,9 @@ span:hover {
   opacity: 90%;
 }
 
-.comment-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-}
+/* .label-com-link {
 
-.label-com-link {
-
-}
+} */
 
 .input-com-link {
   width: 85%;
@@ -802,8 +798,59 @@ span:hover {
 }
 
 
+/*?-------------------------------All Comments--------------------------------*/
 
 
+.all-comments {
+  display: flex;
+  flex-direction: column;
+  
+  max-width: 675px;
+  background: #c9c9c8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+/*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
+  gap: 1.5em;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  border-top: 2.9px solid #34373a;
+}
+
+.all-comments-username {
+  display: flex;
+}
+
+.all-coms-user {
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+.all-comments-text {
+  display: flex;
+}
+
+.all-coms-text {
+
+}
+
+.all-comments-link {
+  display: flex;
+}
+
+.all-coms-link {
+
+}
+
+.all-coms-link a {
+
+}
 
 
 .login-forms {
