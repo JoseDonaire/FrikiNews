@@ -1,109 +1,134 @@
 <div class="details-page">
 
-  <div id="back">
-    <a href="/news"><button>Back to the News</button></a>
+  <div id="go-back">
+    <a class="go-back-link" href="/news"><button class="go-back-button">Back to the News</button></a>
   </div>
+
+
+{{!-- -----------------------------------------Details------------------------------------------------- --}}
 
   <div class="details">
+
+    <div class="detail-image">
+
+      <div class="det-image">
+        <img src="#" alt="Imagen Noticia">
+      </div>
+
+    </div>
     
-    <div class="detail-title">
-      <h3>{{detailId.title}}</h3>
-    </div>
+    <div class="detail-info">
 
-    <div class="detail-category">
-      <h4>{{detailId.category}}</h4>
-    </div>
+      <div class="detail-title">
+        <h3>{{detailId.title}}</h3>
+      </div>
 
-    <div class="detail-user">
-      <h4>{{detailId.owner.username}}</h4>
-    </div>
+      <div class="detail-category">
+        <h5>{{detailId.category}}</h5>
+      </div>
 
-    <div class="detail-text">
-      <p>{{detailId.text}}</p>
+      <div class="detail-user">
+        <h4>{{detailId.owner.username}}</h4>
+      </div>
+
+      <div class="detail-text">
+        <p>{{detailId.text}}</p>
+      </div>
+    
     </div>
 
   </div>
 
-<div class="detail-buttons">
+{{!-- -----------------------------------------Botones------------------------------------------------- --}}
 
-  {{#if isOwner}}
+  <div class="detail-buttons">
 
-    <div class="owner-button-edit">
-      <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
-    </div>
+    {{#if isOwner}}
 
-    <div class="owner-button-delete">
-      <form action="/news/{{detailId._id}}/delete" method="POST">
-        <button>Delete New</button>
-      </form>
-    </div>
-
-    {{else}}
-      {{#if isUserAdmin}}
-
-      <div class="detail-button-edit">
-        <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+      <div class="owner-button-edit">
+        <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
       </div>
 
-      <div class="detail-button-delete">
-        <form action="/news/{{detailId._id}}/delete" method="POST">
-          <button>Delete New</button>
+      <div class="owner-button-delete">
+        <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
+          <button class="delete-button">Delete</button>
         </form>
       </div>
 
+      {{else}}
+        {{#if isUserAdmin}}
+
+        <div class="detail-button-edit">
+          <a class="edit-link" href="/news/{{detailId._id}}/edit"><button class="edit-button">Edit</button></a>
+        </div>
+
+        <div class="detail-button-delete">
+          <form class="del-form" action="/news/{{detailId._id}}/delete" method="POST">
+            <button class="delete-button">Delete</button>
+          </form>
+        </div>
+
+        {{/if}}
       {{/if}}
-    {{/if}}
 
-</div>
+  </div>
 
 
-  <div>
+{{!-- -----------------------------------------Comment------------------------------------------------- --}}
+
+  <div class="comment">
 
   {{#if isUserActive}}
 
-    <h2>Comment mdf!</h2>
+    <div class="comment-title">
+      <h4>Comment mdf!</h4>
+    </div>
 
-    <form action="/comment/{{detailId._id}}/create" method="POST">
+    <div class="comment-form">
+
+      <form class="-com-form" action="/comment/{{detailId._id}}/create" method="POST">
 
 
+        <div class="comment-text">
+          <label class="label-com-txt" for="text">Text</label>
+          <input class="input-com-txt" name="text" placeholder="a ver dices">
+        </div>
+        
+        <div class="comment-link">
+          <label class="label-com-link" for="newLink">Link</label>
+          <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado">
+        </div>
+        
+        <div class="comment-button">
+          <button class="button-new-comment">Add New Comment</button>
+        </div>
 
-      <label for="text">Text</label>
-      <input name="text" placeholder="comment aquí">
-      
-      <label for="newLink">Text</label>
-      <input type="url" name="newLink" placeholder="link">
-      
-      <button>Add New Comment</button>
+      </form>
 
-    </form>
+      </div>
 
   {{/if}}
 
   </div>
 
-  <div>
+
+{{!-- -----------------------------------------All Comments------------------------------------------------- --}}
+
+  <div class="all-comments">
 
   {{#each comment}}
 
-      <h3>
+    <div class="all-comments-username">
+      <h3 class="all-coms-user">{{this.owner.username}}</h3>
+    </div>
 
-        {{this.owner.username}}
+    <div class="all-comments-text">
+      <p class="all-coms-text">{{this.text}}</p>
+    </div>
 
-      </h3>
-
-
-      <p>
-
-        {{this.text}}
-
-      </p>
-
-      <p>
-
-        {{this.newLink}}
-
-      </p>
-
+    <div class="all-comments-link">
+      <p class="all-coms-link">{{this.newLink}}</p>
+    </div>
 
   {{/each}}
 
