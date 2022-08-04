@@ -10,14 +10,10 @@ const {isLoggedIn, isAdmin} = require("../middlewares/auth.js")
 router.get("/", isLoggedIn, async (req, res, next) => {
   try {
     const userId = req.session.user._id
-    const listOfNewsById = await User.findById(userId)
-    console.log("a ver que hay", listOfNewsById)
-
     console.log("esta es el user", userId)
-    const listOfNews = await New.findById(userId).populate("owner")/* .select("_id") */
-    console.log("esta es la lista", listOfNews)
-
-    res.render("profile/user.hbs", {listOfNews})
+    const listOfNewsById = await New.find({owner:userId})
+    console.log("esta es la lista", listOfNewsById)
+    res.render("profile/user.hbs", {listOfNewsById})
 
   } catch (err) {
     next(err)
