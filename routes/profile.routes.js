@@ -12,15 +12,11 @@ router.get("/", isLoggedIn, (req, res, next) => {
 })
 
 
-/*  */
+router.post('/')
 
 
 
 
-//get admin
-router.get("/admin", isLoggedIn, isAdmin, (req, res, next) => {
-  res.render("profile/admin.hbs")
-})
 
 
 module.exports = router;
