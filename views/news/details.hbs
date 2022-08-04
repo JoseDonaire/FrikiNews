@@ -1,84 +1,114 @@
-<a href="/news"><button>Back to the News</button></a>
+<div class="details-page">
 
-<h3>{{detailId.title}}</h3>
-<h4>{{detailId.category}}</h4>
-<h4>{{detailId.owner.username}}</h4>
-<p>{{detailId.text}}</p>
+  <div id="back">
+    <a href="/news"><button>Back to the News</button></a>
+  </div>
 
+  <div class="details">
+    
+    <div class="detail-title">
+      <h3>{{detailId.title}}</h3>
+    </div>
 
+    <div class="detail-category">
+      <h4>{{detailId.category}}</h4>
+    </div>
+
+    <div class="detail-user">
+      <h4>{{detailId.owner.username}}</h4>
+    </div>
+
+    <div class="detail-text">
+      <p>{{detailId.text}}</p>
+    </div>
+
+  </div>
+
+<div class="detail-buttons">
 
   {{#if isOwner}}
-  <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
 
-  <form action="/news/{{detailId._id}}/delete" method="POST">
-    <button>Delete New</button>
-  </form>
-  {{else}}
-    {{#if isUserAdmin}}
+    <div class="owner-button-edit">
+      <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+    </div>
 
-    <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+    <div class="owner-button-delete">
+      <form action="/news/{{detailId._id}}/delete" method="POST">
+        <button>Delete New</button>
+      </form>
+    </div>
 
-    <form action="/news/{{detailId._id}}/delete" method="POST">
-      <button>Delete New</button>
-    </form>
-    
+    {{else}}
+      {{#if isUserAdmin}}
+
+      <div class="detail-button-edit">
+        <a href="/news/{{detailId._id}}/edit"><button>Edit New</button></a>
+      </div>
+
+      <div class="detail-button-delete">
+        <form action="/news/{{detailId._id}}/delete" method="POST">
+          <button>Delete New</button>
+        </form>
+      </div>
+
+      {{/if}}
     {{/if}}
+
+</div>
+
+
+  <div>
+
+  {{#if isUserActive}}
+
+    <h2>Comment mdf!</h2>
+
+    <form action="/comment/{{detailId._id}}/create" method="POST">
+
+
+
+      <label for="text">Text</label>
+      <input name="text" placeholder="comment aquí">
+      
+      <label for="newLink">Text</label>
+      <input type="url" name="newLink" placeholder="link">
+      
+      <button>Add New Comment</button>
+
+    </form>
+
   {{/if}}
 
+  </div>
+
+  <div>
+
+  {{#each comment}}
+
+      <h3>
+
+        {{this.owner.username}}
+
+      </h3>
 
 
-<div>
+      <p>
 
-{{#if isUserActive}}
+        {{this.text}}
 
-  <h2>Comment mdf!</h2>
+      </p>
 
-  <form action="/comment/{{detailId._id}}/create" method="POST">
+      <p>
 
+        {{this.newLink}}
 
-
-    <label for="text">Text</label>
-    <input name="text" placeholder="comment aquí">
-    
-    <label for="newLink">Text</label>
-    <input type="url" name="newLink" placeholder="link">
-    
-    <button>Add New Comment</button>
-
-  </form>
-
-{{/if}}
-
-</div>
-
-<div>
-
-{{#each comment}}
-
-    <h3>
-
-      {{this.owner.username}}
-
-    </h3>
+      </p>
 
 
-    <p>
-
-      {{this.text}}
-
-    </p>
-
-    <p>
-
-      {{this.newLink}}
-
-    </p>
+  {{/each}}
 
 
-{{/each}}
-
+  </div>
 
 </div>
-
-
 
