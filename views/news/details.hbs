@@ -95,12 +95,12 @@
 
 
           <div class="comment-text">
-            <label class="label-com-txt" for="text">Text</label>
+            {{!-- <label class="label-com-txt" for="text">Text</label> --}}
             <input class="input-com-txt" name="text" placeholder="Tu comentario...">
           </div>
           
           <div class="comment-text">
-            <label class="label-com-link" for="newLink">Link</label>
+            {{!-- <label class="label-com-link" for="newLink">Link</label> --}}
             <input class="input-com-link" type="url" name="newLink" placeholder="link relacionado">
           </div>
           
@@ -124,7 +124,7 @@
   {{#each comment}}
 
     <div class="comments">
-      
+
 
       <div class="all-comments-username">
         <h3 class="all-coms-user">{{this.owner.username}}</h3>
