@@ -1,43 +1,47 @@
-<div class="signup-forms">
+<div class="sign-page">
 
-  <form class="forms" action="/auth/signup" method="POST">
+  <div class="signup-forms">
 
-    <div class="form-space">
-      <label class="label-us" for="username">Username</label>
-      <input class="controls" type="text" name="username" placeholder="ingresar username">
-    </div>
+    <form class="forms" action="/auth/signup" method="POST">
 
-    <br>
-    
-    <div class="form-space">
-      <label class="label-em" for="email">Email</label>
-      <input class="controls" type="text" name="email" placeholder="ingresar email">
-    </div>
+      <div class="form-space">
+        <label class="label-us" for="username">Username</label>
+        <input class="controls" type="text" name="username" placeholder="ingresar username">
+      </div>
 
-    <br>
-    
-    <div class="form-space">
-      <label class="label-ps" for="password">Password</label>
-      <input class="controls" type="password" name="password" placeholder="ingresar password">
-    </div>
-    
+      <br>
+      
+      <div class="form-space">
+        <label class="label-em" for="email">Email</label>
+        <input class="controls" type="text" name="email" placeholder="ingresar email">
+      </div>
 
-    <div class="check-policy">
-      <label class="checkbox" for="myCheckboxId"></label>
-      <input class="chexbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-      <p id="policy">Estoy de acuerdo con&nbsp; <a class="term-cond" href="#"> <span class="sp-term">Terminos y Condiciones</span></a></p>
-    </div>
-    
-    <p class="err-message" style="color: red" >{{errorMessage}}</p>
-    <div class="btn-registrarse">
-      <button class="button">Registrarse</button>
-    </div>
-    <br>
-    <div class="link-login">
-      <p class="registrado"><a class="link-registrado" href="/auth/login">¿Ya tengo cuenta?</a></p>
-    </div>
+      <br>
+      
+      <div class="form-space">
+        <label class="label-ps" for="password">Password</label>
+        <input class="controls" type="password" name="password" placeholder="ingresar password">
+      </div>
+      
 
-  </form>
+      <div class="check-policy">
+        <label class="checkbox" for="myCheckboxId"></label>
+        <input class="chexbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+        <p id="policy">Estoy de acuerdo con&nbsp; <a class="term-cond" href="#"> <span class="sp-term">Terminos y Condiciones</span></a></p>
+      </div>
+      
+      <p class="err-message" style="color: red" >{{errorMessage}}</p>
+      <div class="btn-registrarse">
+        <button class="button">Registrarse</button>
+      </div>
+      <br>
+      <div class="link-login">
+        <p class="registrado"><a class="link-registrado" href="/auth/login">¿Ya tengo cuenta?</a></p>
+      </div>
 
+    </form>
+
+
+  </div>
 
 </div>

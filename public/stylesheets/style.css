@@ -1,8 +1,8 @@
 body {
   padding: 0;
   margin: 0;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* background-color: black; */
   
 }
 
@@ -51,33 +51,35 @@ header {
 }
 
 #nav-bar {
-/*   border: 3px solid white; */
   background-color: #34373a;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 2.3em;
+  height: 2.8em;
   box-shadow: 1px 0px 2px #16181c;
 }
 
 .nav {
-/*   background-color: yellow;
-  border: 2px solid white; */
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 15em;
-  height: 2.3em;
+  width: 75em;
+  height: 2em;
+  gap: 4em;
+  margin-left: 4em;
+  padding-bottom: 1em;
 }
 
 .nav-link {
-/*   background-color: red; */
+
   color: rgb(224, 232, 242);
-  font-size: 1.1em;
+  font-size: 1em;
   text-decoration: none;
+  width: 8em;
 }
 
 .nav-link:hover {
@@ -112,10 +114,20 @@ header {
 
 
 
+.portada {
 
+/*   padding-left: 21%; */
+
+
+
+
+}
 
 
 .carousel-portada {
+  width: 80vw;
+  padding-left: 21%;
+  margin-top: 4em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -270,21 +282,21 @@ header {
 /*TODO----------------------------------------SIGNUP-------------------------------------- */
 
 .signup-forms {
+  margin-top: 4em;
+  display: flex;
   box-sizing: border-box;
-  background-color: black;
 
 }
 
 .forms {
-  
   max-width: 375px;
   background: #c9c9c8;
   padding: 30px;
   margin: auto;
   border-radius: 4px;
   color: rgb(54, 53, 53);
-/*   box-shadow: 8px 12px 37px rgb(72, 68, 68); */
   gap: 5.5em;
+
 }
 
 .form-space {
@@ -429,8 +441,8 @@ header {
 
 /*TODO----------------------------------LOGIN---------------------------------------- */
 .login-forms {
+  display: flex;
   box-sizing: border-box;
-  background-color: black;
 
 }
 
@@ -531,18 +543,34 @@ header {
   margin: 2em;
 }
 
-#go-back {
+
+/* #go-back {
   display: flex;
-  align-items: center;
-}
-
-.go-back-link {
-
+  justify-content: flex-end;
+  margin-right: 1.8em;
 }
 
 .go-back-button {
-
+  border: 2px rgb(218, 217, 217);
+  border-radius: 9px;
+  width: 15em;
+  height: 2em;
+  background-color: #00b7ff;
+  color: white;
+  font-size: 15px;
+  transition: .5s;
+  position: fixed;
 }
+
+.go-back-button:hover {
+  background-color: #62c955;
+  transition: 0.4s;
+  color: rgb(44, 43, 43);
+  border: 2px #acbec5;
+} */
+
+
+
 
 .details-card {
   display: flex;
@@ -551,7 +579,6 @@ header {
 }
 
 .details {
-  /* border: 2px solid black; */
   display: flex;
   flex-direction: row;
   gap: 1em;
@@ -566,6 +593,18 @@ header {
   border-radius: 4px;
   background: #f1f1f1;
   color: rgb(54, 53, 53);
+  transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
+
+  /* transition: 0.4s ease-in-out; */
+}
+
+.details:hover {
+  box-shadow: inset 500px 0 500px 0 #54b3d6;
+  color: rgb(22, 20, 20);
+  
+  /* border: 5px solid rgb(207, 203, 11);
+  border-radius: 8px;
+  transform: scale(1.1); */
 }
 
 .detail-image {
@@ -621,23 +660,25 @@ header {
 
 .detail-category {
   display: flex;
+  align-items: center;
   color: #000;
-  font-size: 0.9em;
+  font-size: 1em;
   padding-bottom: 2em;
 }
 
 .detail-category p {
   /* border: 4px solid rgb(216, 67, 17); */
+  width: 90px;
   background: rgb(195, 195, 195);
   border-radius: 3px;
 }
 
 .detail-text {
-  border: /* 2px solid black; */
+  
 }
 
 .detail-text p {
-  /* border: 4px solid rgb(216, 67, 17); */
+  font-size: 1.1em;
 }
 
 .detail-user {
@@ -800,7 +841,7 @@ header {
 .button-new-comment {
   border: 2px rgb(218, 217, 217);
   border-radius: 9px;
-  width: 10em;
+  width: 15em;
   height: 2em;
   background-color: #00b7ff;
   color: white;
@@ -919,4 +960,178 @@ header {
   transition: 0.3s;
   color: #0599d4;
   text-decoration: underline;
+}
+
+
+
+
+
+.user-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.user-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-user {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  box-sizing: border-box;
+  width: 60vw;
+  min-width: 32em;
+  max-width: 70em;
+
+  padding: 2em;
+  margin: auto;
+  border-radius: 4px;
+  background: #f1f1f1;
+  color: rgb(54, 53, 53);
+  /* transition: color .3s ease-in-out, box-shadow .5s ease-in-out; */
+
+  transition: 0.4s ease-in-out;
+}
+
+.details-user:hover {
+  /* box-shadow: inset 500px 0 500px 0 #bebe0e;
+  color: rgb(22, 20, 20); */
+  
+  box-shadow: inset 500px 0 500px 0 #c9d0d0;
+  border: 5px solid rgb(120, 120, 118);
+  border-radius: 8px;
+  transform: scale(1.1);
+}
+
+.spu-title {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+
+
+
+
+.add-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.add-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.add-title {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.add-forms {
+  display: flex;
+}
+
+.forms-cat {
+  max-width: 375px;
+  background: #c9c9c8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+  gap: 7.5em;
+  padding: 3em;
+
+
+}
+
+.form-space-cattegory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+
+  width: 20vw;
+  min-width: 20em;
+  max-width: 70em;
+  
+}
+
+
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.error-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.error-title h1 {
+  font-size: 6em;
+}
+
+.error-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  
+}
+
+.pinta-mal {
+  width: 40vw;
+  height: 50vh;
+  min-width: 30em;
+  max-width: 50em;
+  min-height: 30em;
+  max-height: 50em;
+}
+
+
+
+
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.not-found-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.not-found-title h1 {
+  font-size: 6em;
+}
+
+.error-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  
 }

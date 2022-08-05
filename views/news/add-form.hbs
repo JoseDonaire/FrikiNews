@@ -1,32 +1,45 @@
-<div>
-  <div>
-    <h2>Add u FrikiNew!</h2>
-  </div>
-  <div>
-    <form action="/news/create" method="POST">
+<div class="add-page">
 
-      <div>
-        <label for="title"></label>
-        <input type="text" name="title" required="true" />
+  <div class="add-title">
+    <h2>Te has enterado de una Friki News??</h2>
+    <p>Cuentala aquí</p>
+  </div>
+
+
+
+  <div class="add-forms">
+
+    <form class="com-form" action="/news/create" method="POST">
+
+      <div class="form-space">
+        <label class="label-us" for="title"></label>
+        <input class="controls"  type="text" name="title" required="true" placeholder="Title..." />
       </div>
-      <div>
-        <label for="category">Category</label>
-        <select name="category">
+
+      <div class="form-space-cattegory">
+
+        <label class="label-cat" for="category">Category</label>
+        <select class="select-cat" name="category">
           {{#each categoriesArr}}
             <option value="{{this}}">{{this}}</option>
           {{/each}}
         </select>
+
       </div>
-      <div>
+
+      <div class="form-space">
         <label for="{{this._id}}">{{this.username}}</label>
       </div>
-      <div>
-        <label for="text">Text</label>
-        <input type="text" name="text" required="true" />
+
+      <div class="form-space">
+        <label class="label-us" for="text"></label>
+        <input class="controls" type="text" name="text" required="true"   placeholder="Write your news..." />
       </div>
-      <div>
-        <button>Add New</button>
+
+      <div class="btn-sign">
+        <button class="button-in">Add New</button>
       </div>
+
     </form>
 
   </div>

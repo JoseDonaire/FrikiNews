@@ -1,13 +1,43 @@
-<div>
-  <div>
+<div class="user-page">
+
+  <div class="user-title">
     <h2>Tus Noticias</h2>
   </div>
 
   <div>
+
+    
     {{#each listOfNewsById}}
 
-      <div>
-        <a href="/news/{{this._id}}/details">{{this.title}}</a>
+      <div class="details-card">
+
+        <div class="details-user">
+
+          <div class="detail-image">
+
+            <div class="det-image">
+              <img class="default-image" src="/images/zona-friki.png" alt="Imagen Noticia">
+            </div>
+
+          </div>
+
+
+          <div div class="detail-info">
+
+            <div class="detail-title">
+              <a id="user-det-title" href="/news/{{this._id}}/details"><span class="spu-title">{{this.title}}</span></a>
+            </div>
+
+            <div class="detail-category">
+              <p id="cattegory">{{this.category}}</p>
+            </div>
+
+            <div class="detail-text">
+              <p>{{this.text}}</p>
+            </div>
+
+          </div>
+
       </div>
 
     {{/each}}
