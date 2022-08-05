@@ -1,23 +1,58 @@
-<div>
-  <div>
-    <h1>Noticias</h1>
-  </div>
-  <div>
-    {{#each listOfNews}}
-      {{#if isUserAdmin}}
-        <a href="/news/{{this._id}}/edit"><button>Edit New</button></a>
-        <form
-          action="/news/{{this._id}}/delete"
-          method="POST"
-          style="display: inline"
-        >
-          <button>Delete New</button>
-        </form>
-      {{else}}
-        <br>
-        <a href="/news/{{this._id}}/details">{{this.title}}</a>
-        <br>
-      {{/if}}
-    {{/each}}
-  </div>
+<div class="list-page">
+
+
+    <div class="list-title">
+      <h1>Todas las Noticias</h1>
+    </div>
+
+
+    <div class="">
+      {{#each listOfNews}}
+        {{#if isUserAdmin}}
+
+          <div class="detail-button-edit"></div>
+            <a class="edit-link" href="/news/{{this._id}}/edit"><button class="edit-button">Edit New</button></a>
+          </div>
+
+          <div class="detail-button-delete">
+            <form class="del-form" action="/news/{{this._id}}/delete" method="POST">
+              <button class="delete-button">Delete New</button>
+            </form>
+          </div>
+
+        {{else}}
+      
+          <div class="details-page">
+
+            <div class="details">
+
+              <div class="detail-image">
+
+                <div class="det-image">
+                  <img class="default-image" src="/images/frikinews2.png" alt="Imagen Noticia">
+                </div>
+
+              </div>
+
+              <div class="detail-info">
+
+                <div class="detail-title">
+                  <a class="detail-title-link" href="/news/{{this._id}}/details"><span class="sp-title">{{this.title}}</span></a>
+                </div>
+
+                <div class="detail-category">
+                  <p>{{this.category}}</p>
+                </div>
+              
+              </div>
+            
+            </div>
+
+          </div>
+
+        {{/if}}
+      {{/each}}
+    </div>
+
+  
 </div>

@@ -7,7 +7,7 @@ const categoriesArr = require("../utils/categories.js");
 // get listOfNews
 router.get("/", async (req, res, next) => {
   try {
-    const listOfNews = await New.find().select("title");
+    const listOfNews = await New.find();
     res.render("news/list.hbs", { listOfNews });
   } catch (err) {
     next(err);

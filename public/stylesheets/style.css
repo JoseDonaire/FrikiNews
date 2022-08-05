@@ -363,12 +363,12 @@ header {
   align-items: center;
 }
 
-span {
+.sp-term {
   color: #237cc0;
   text-decoration: underline;
 }
 
-span:hover {
+.sp-term:hover {
   transition: 0.3s;
   color: #ffffff;
   text-decoration: underline;
@@ -569,8 +569,9 @@ span:hover {
 }
 
 .detail-image {
-  border: 2px solid black;
   display: flex;
+  justify-content: center;
+  align-items: center;
   
   min-width: 15em;
   max-width: 25em;
@@ -587,7 +588,12 @@ span:hover {
 }
 
 .default-image {
-  /* object-fit: contain; */
+  width: 16vw;
+  height: 20vh;
+  min-width: 15em;
+  max-width: 20em;
+  min-height: 20em;
+  max-height: 20em;
 }
 
 .detail-info {
@@ -837,7 +843,7 @@ span:hover {
 .all-comments-username {
   display: flex;
   margin: 3px 0px 3px 0px;
-  background-image: url(../login2.jpg);
+  background-image: url(../images/login2.jpg);
   background-size: 45px;
   background-repeat: no-repeat;
   background-position: left;
@@ -877,3 +883,40 @@ span:hover {
   text-decoration: underline;
 }
 
+
+
+
+
+
+.list-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.list-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-title-link {
+  text-decoration: none;
+}
+
+.detail-title-link:hover {
+  color: #0599d4;
+  text-decoration: underline;
+}
+
+.sp-title {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+.sp-title:hover {
+  transition: 0.3s;
+  color: #0599d4;
+  text-decoration: underline;
+}

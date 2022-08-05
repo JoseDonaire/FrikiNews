@@ -14,7 +14,7 @@
         <div class="detail-image">
 
           <div class="det-image">
-            <img class="default-image" src="#" alt="Imagen Noticia">
+            <img class="default-image" src="/images/frikinews2.png" alt="Imagen Noticia">
           </div>
 
         </div>
@@ -148,3 +148,56 @@
 
 </div>
 
+
+
+{{!-- <div class="details-page">
+
+  <div>
+    <h1>Noticias</h1>
+  </div>
+
+  <div class="details">
+
+    <div class="">
+      {{#each listOfNews}}
+        {{#if isUserAdmin}}
+
+          <div class="detail-button-edit"></div>
+            <a class="edit-link" href="/news/{{this._id}}/edit"><button class="edit-button">Edit New</button></a>
+          </div>
+
+          <div class="detail-button-delete">
+            <form class="del-form" action="/news/{{this._id}}/delete" method="POST">
+              <button class="delete-button">Delete New</button>
+            </form>
+          </div>
+
+        {{else}}
+
+          <div class="detail-image">
+
+            <div class="det-image">
+              <img class="default-image" src="#" alt="Imagen Noticia">
+            </div>
+
+          </div>
+
+          <div class="detail-info">
+
+            <div class="detail-title">
+              <a class="detail-title-link" href="/news/{{this._id}}/details">{{this.title}}</a>
+            </div>
+
+            <div class="detail-category">
+              <p>{{this.category}}</p>
+            </div>
+          
+          </div>
+
+        {{/if}}
+      {{/each}}
+    </div>
+
+  </div>
+  
+</div> --}}
