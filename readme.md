@@ -1,4 +1,4 @@
-# Tu Receta 
+# Tu Noticia 
 
 ## Descripción
 
@@ -70,7 +70,7 @@ Página web donde puedes compartir y ver noticias relacionadas con el mundo frik
 - GET /news/create 
  -  render("news/add-form.hbs")
 
-- POST /recipe/create 
+- POST /news/create 
      - category
      - title
      - text
